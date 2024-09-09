@@ -1,0 +1,41 @@
+/* sample.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: hwb(240 53% 23%);
+    color: #fff;
+}
+
+.navbar {
+    padding: 1rem;
+}
+
+.navbar-brand {
+    color: #e4d0d0;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: black;
+    margin: 0 1rem;
+}
+
+.nav-link:hover {
+    color: #adb5bd;
+}
+
+.btn-dark {
+    background-color: #343a40;
+    border: none;
+}
+
+.btn-dark:hover {
+    background-color: #495057;
+}
