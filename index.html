@@ -48,7 +48,11 @@
                     </div><br>                        
                     <div>
                         <button type="button" class="bg-dark text-white p-1">Get Started</button>
-                        <video width="600" src="./myvideo.mp4" controls>Watch Our Introduction</video>                      
+                        <div id="videoContainer">
+                            <div id="playIcon"></div>
+                            <video id="myVideo" src="./myvideo.mp4" type="video/mp4" controls>                                    
+                            </video>
+                        </div>                      
                     </div>                
                 </div>
                 <div class="col-lg">
@@ -340,6 +344,16 @@
     });
 });
 </script>
+<script>
+        const playIcon = document.getElementById('playIcon');
+        const video = document.getElementById('myVideo');
+
+        playIcon.addEventListener('click', function() {
+            playIcon.style.display = 'none'; 
+            video.style.display = 'block';
+            video.play();
+        });
+    </script>
 </html>
 
 
