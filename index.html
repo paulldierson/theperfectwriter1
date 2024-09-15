@@ -352,12 +352,18 @@
         });
     </script>
     <script>
-    const playBtn = document.getElementById('playBtn');
     const video = document.getElementById('myVideo');
+  const playPauseBtn = document.getElementById('playPauseBtn');
 
-    playBtn.addEventListener('click', function() {
+  playPauseBtn.addEventListener('click', function () {
+    if (video.paused) {
       video.play();
-    });
+      playPauseBtn.textContent = 'Pause Video'; 
+    } else {
+      video.pause();
+      playPauseBtn.textContent = 'Play Video'; 
+    }
+  });
         
     function runCounter(id, targetValue, duration) {
       let startValue = 0;
