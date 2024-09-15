@@ -351,20 +351,23 @@
             video.play();
         });
     </script>
-    <script>
+    
+    <script>   
     const video = document.getElementById('myVideo');
-  const button = document.getElementById('playBtn');
-  
-  button.addEventListener('click', () => {
-    if (video.paused || video.ended) {
-      video.play();
-      button.textContent = 'Pause Video';
-    } else {
-      video.pause();
-      button.textContent = 'Play Video';
-    }
-  });
-        
+    const button = document.getElementById('videoButton');
+
+    button.addEventListener('click', function() {
+      if (video.paused) {
+        video.play();
+        button.textContent = 'Pause Video';
+      } else {
+        video.pause();
+        button.textContent = 'Play Video';
+      }
+    });
+  </script>
+    
+    <script>   
     function runCounter(id, targetValue, duration) {
       let startValue = 0;
       const element = document.getElementById(id);
