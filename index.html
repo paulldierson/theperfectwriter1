@@ -48,35 +48,32 @@
                     </div><br>                        
                     <div>
                         <button type="button" class="bg-dark text-white p-1">Get Started</button>
-                        <div id="videoContainer">
-                            <div id="playIcon"></div>
-                            <video id="myVideo" src="./myvideo.mp4" type="video/mp4" controls>                                    
-                            </video>
-                        </div>                      
+                        <button id="playBtn">Play Video</button>                
                     </div>                
                 </div>
-                <div class="col-lg">
-                    <div>
-                        <img src="./image1.jpeg" alt="academic writing" class="float-end img-fluid" style="height: 300px; width: 400px;">
-                    </div>
+                <div class="col-lg">                 
+                        <video id="myVideo" width="250" height="250" class="float-end img-fluid" controls>
+    <source src="sample.mp4" type="video/mp4">
+                            </video>                   
+                </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="container px-5 py-2 mx-5">
-        <div class="row bg-dark text-center mx-5" style="align-items: center;">
+        <div class="row bg-dark text-center mx-5 stats" style="align-items: center;">
             <div class="col-lg">
-                <div class="text-white py-3" style="border-right: solid 2px gray;">98%<br> Client Satisfaction</div>
+                <div class="text-white py-3" style="border-right: solid 2px gray;"><span id="stat1" class="stat-number">0</span>%<br> Client Satisfaction</div>
             </div>
             <div class="col-lg">
-                <div class="text-white py-3" style="border-right: solid 2px gray;">200+<br> Expert Writers</div>
+                <div class="text-white py-3" style="border-right: solid 2px gray;"><span id="stat2" class="stat-number">0</span>+<br> Expert Writers</div>
             </div>
             <div class="col-lg">
-                <div class="text-white py-3" style="border-right: solid 2px gray;">5,000+<br> Completed Projects</div>
+                <div class="text-white py-3" style="border-right: solid 2px gray;"><span id="stat3" class="stat-number">0</span>+<br> Completed Projects</div>
             </div>
             <div class="col-lg">
-                <div class="text-white py-3">24/7<br> Support Available</div>
+                <div class="text-white py-3"><span id="stat4" class="stat-number">0</span>/7<br> Support Available</div>
             </div>
         </div>
     </section>
@@ -354,6 +351,30 @@
             video.play();
         });
     </script>
+    <script>    
+    function runCounter(id, targetValue, duration) {
+      let startValue = 0;
+      const element = document.getElementById(id);
+      const increment = targetValue / (duration / 10); 
+  
+      const counter = setInterval(() => {
+        startValue += increment;
+        if (startValue >= targetValue) {
+          element.textContent = targetValue;
+          clearInterval(counter);
+        } else {
+          element.textContent = Math.floor(startValue);
+        }
+      }, 10);  
+    }
+
+    window.onload = function() {
+      runCounter('stat1', 98, 3000);    // 98% Client Satisfaction
+      runCounter('stat2', 200, 3000);   // 200+ Expert Writers
+      runCounter('stat3', 5000, 3000);  // 5,000+ Completed Projects
+      runCounter('stat4', 24, 3000);    // 24/7 Support Available
+    };
+  </script>
 </html>
 
 
