@@ -353,15 +353,15 @@
     </script>
     <script>
     const video = document.getElementById('myVideo');
-  const playPauseBtn = document.getElementById('playPauseBtn');
-
-  playPauseBtn.addEventListener('click', function () {
-    if (video.paused) {
+  const button = document.getElementById('playBtn');
+  
+  button.addEventListener('click', () => {
+    if (video.paused || video.ended) {
       video.play();
-      playPauseBtn.textContent = 'Pause Video'; 
+      button.textContent = 'Pause Video';
     } else {
       video.pause();
-      playPauseBtn.textContent = 'Play Video'; 
+      button.textContent = 'Play Video';
     }
   });
         
